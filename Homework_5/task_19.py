@@ -1,9 +1,9 @@
 # 4. Реализуйте RLE алгоритм: реализуйте модуль сжатия и восстановления данных. Входные и выходные данные хранятся в отдельных текстовых файлах.
 # Пример: aaaaaaabbbbbbccccccccc => 7a6b9c и 11a3b7c => aaaaaaaaaaabbbccccccc
 
-with open('RLE.txt', 'w', encoding='UTF-8') as file:
+with open('Homework_5/RLE.txt', 'w', encoding='UTF-8') as file:
     file.write(input('Напишите текст необходимый для сжатия: '))
-with open('RLE.txt', 'r') as file:
+with open('Homework_5/RLE.txt', 'r') as file:
     text = file.readline()
     text_compression = text.split()
 
@@ -23,13 +23,13 @@ else:
     
 print(text)
 print(enconding)
-with open('RLE3.txt', 'w', encoding='UTF-8') as file:
+with open('Homework_5/RLE3.txt', 'w', encoding='UTF-8') as file:
     file.write(f'{enconding}')
 
 
 input('Для востонавления текста нажмите Enter')
 
-with open('RLE3.txt', 'r', encoding='utf_8') as file:
+with open('Homework_5/RLE3.txt', 'r', encoding='utf_8') as file:
     text = file.read()
 
 number = ''
@@ -43,5 +43,5 @@ for i in text:
 
 print(f'Востановленный текст представляет последовательность:\n{text_return}')
 
-with open('RLE.txt', 'w', encoding='utf_8') as file:
+with open('Homework_5/1RLE.txt', 'w', encoding='utf_8') as file:
     file.write(text_return)
