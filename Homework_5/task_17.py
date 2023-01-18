@@ -1,6 +1,6 @@
 # Напишите программу, удаляющую из текста все слова, содержащие ""абв""
 
-path = 'fileabv.txt'
+path = 'Homework_5/fileabv.txt'
 with open(path, 'r', encoding='utf8')as file:
     text = file.readline().split()
 
