@@ -1,5 +1,6 @@
 import view
 import process
+import log
 
 def button_click():
     rezhim = view.inp_mod()
@@ -14,6 +15,7 @@ def button_click():
     elif rezhim.lower() == 'экспорт':
         result = view.inp_export()
         process.export(result)
+    log.log_cash(rezhim)
             
         
 
