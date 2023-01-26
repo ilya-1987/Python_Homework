@@ -1,30 +1,24 @@
+import os.path
+from csv import writer
+import csv
+
 def search (sn):
-    res_list = []
-    path = 'Homework_7/Handbook-main/Handbook/data.txt'
-    with open (path, 'r', encoding='utf-8') as file:
-        while True:
-            my_book = file.readline()
-            if not my_book:
-                if not file.readline():
-                    break
-            if my_book.rstrip() == sn:
-                res_list.append(sn)
-                for i in range(1, 5):
-                    res_list.append(file.readline().rstrip())
-                res_list.append('')
-    if len(res_list) > 0:
-        return res_list
-    return 'Таких людей не найдено'
-
-
-def export (res):
-    path = 'Homework_7/Handbook-main/Handbook/data.txt'
-    with open (path, 'a', encoding='utf-8') as file:
-        # file.write('\n')
-        for ind in range(5):
-            file.write(res[ind] + '\n')
-        file.write(res[5])
+    csv_file = csv.reader(open('Homework_7/classmates.csv', 'r'))
+    for row in csv_file:
+        if sn == row[0]:
+            print(row)
+        #else:
+            #print(f'Данные не найдены')
     
 
-                
-        
+def export (res):
+    if os.path.exists('Homework_7/classmates.csv') == False:
+        with open('Homework_7/classmates.csv', mode="w", encoding='utf-8') as w_file:
+            file_writer = csv.writer(w_file, delimiter = ",", lineterminator="\r")
+            file_writer.writerow(["Фамилия", "Имя", "Отчество", "Номер телефона", "Телефон"])
+            file_writer.writerow(res)
+    else:
+        with open('Homework_7/classmates.csv', 'a', newline='') as f_object:
+            writer_object = writer(f_object)
+            writer_object.writerow(res)
+            f_object.close()

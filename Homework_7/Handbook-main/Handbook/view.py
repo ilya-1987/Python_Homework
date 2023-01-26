@@ -8,17 +8,16 @@ def inp_import():
     return surname
 
 def view_import (result):
-    print(*result, sep='\n') 
+    print(result) 
 
 def inp_export():
-    name = input('Введите имя: ')
     surname = input('Введите фамилию: ')
+    name = input('Введите имя: ')
     sec_name = input('Введите отчество: ')
-    phone = input('Введите телефона: ')
+    phone = int(input('Введите номер телефона: '))
     comment = input('Ведите признак телефона (домашний, рабочий): ')
-    return '\n', name, surname, sec_name, phone, comment
+    return surname, name, sec_name, phone, comment
 
 
 def view_import_no ():
     print(f'Данные не найдены')
-
