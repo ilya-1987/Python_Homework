@@ -3,7 +3,7 @@ from csv import writer
 import csv
 
 def search (sn):
-    csv_file = csv.reader(open('Homework_7/classmates.csv', 'r'))
+    csv_file = csv.reader(open('/home/userpc/Документы/Python_Homework/Homework_7/classmates.csv', 'r'))
     for row in csv_file:
         if sn == row[0]:
             print(row)

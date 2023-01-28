@@ -12,3 +12,4 @@ for word in text:
         text.remove(word)
 
 print(text)
+
